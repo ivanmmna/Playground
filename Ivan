@@ -1,0 +1,50 @@
+/*
+Assessment Requirements
+1. Create a variable that can hold a number of NFT's. What type of variable might this be?
+2. Create an object inside your mintNFT function that will hold the metadata for your NFTs.
+The metadata values will be passed to the function as parameters. When the NFT is ready,
+you will store it in the variable you created in step 1
+3. Your listNFTs() function will print all of your NFTs metadata to the console (i.e. console.log("Name: " + someNFT.name))
+4. For good measure, getTotalSupply() should return the number of NFT's you have created
+*/
+// create a variable to hold your NFT's
+const NonFTs = []
+// this function will take in some values as parameters, create an
+// NFT object using the parameters passed to it for its metadata,
+// and store it in the variable above.
+function mintNonFT (_brand, _model, _color, _vehicle, _transmission) {
+const NonFT = {
+"Brand": _brand,
+"Model": _model,
+"Color": _color,
+"Vehicle": _vehicle,
+"Transmission": _transmission,
+}
+NonFTs.push(NonFT);
+console.log("Minted: " + _brand);
+}
+// create a "loop" that will go through an "array" of NFT's
+// and print their metadata with console.log()
+function listNonFTs () {
+for (let i = 0; i < NonFTs.length; i++){
+console.log("\nID: \t\t\t\t\t" + (i + 1));
+console.log("\nBrand: \t\t\t\t" + NonFTs[i].Brand);
+console.log("Model: \t\t\t\t" + NonFTs[i].Model);
+console.log("Color: \t\t\t\t" + NonFTs[i].Color);
+console.log("Vehicle: \t\t\t" + NonFTs[i].Vehicle);
+console.log("Transmission: \t\t" + NonFTs[i].Transmission);
+}
+}
+// print the total number of NFTs we have minted to the console
+function getTotalSupply() {
+console.log("\nTotal NFT: \t" + NonFTs.length);
+}
+// call your functions below this line
+mintNonFT("Yamaha", "Mio Gear", "Mettalic Blue", "Regular Bikes", "Automatic");
+mintNonFT("Honda", "ADV 160", "Pearl White", "Regular Bikes", "Automatic");
+mintNonFT("Suzuki", "Raider R150 Carb", "Mettalic Black", "Regular Bikes", "Manual");
+mintNonFT("Kymco", "AK550", "Matte Gray", "Regular Bikes", "Automatic");
+mintNonFT("KTM", "DUKE 200", "White", "Big Bikes", "Manual");
+mintNonFT("Kawasaki", "Ninja 650", "Matte Black", "Big Bikes", "Automatic");
+listNonFTs();
+getTotalSupply();
